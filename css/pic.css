@@ -1,0 +1,160 @@
+.logo{
+    --pic_height: 70px;
+    --pic_width: 70px;
+    --pic_border: 1px;
+    --font_size: 68px;
+}
+
+.logo__circle{
+    height: var(--pic_height);
+    width: var(--pic_width);
+    font-size: var(--font_size);
+    overflow: hidden;
+    position: relative;
+    border: var(--pic_border) solid var(--light_blue);
+    background-color: var(--milk);
+    border-radius: 50%;
+}
+
+.logo__snowflake-top{
+    position: absolute;
+    top: 0.09em;
+    left: 0.2em;
+    width: 0.25em;
+    height: 0.25em;
+}
+
+.logo__snowflake-bottom{
+    position: absolute;
+    top: 0.35em;
+    left: 0.8em;
+    width: 0.15em;
+    height: 0.15em;
+}
+
+.logo__snow{
+    background-color: var(--light_blue);
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(
+        20% 47%, 80% 47%,
+        90% 30%, 85% 47%,
+        100% 50%,
+        85% 53%, 90% 70%,
+        80% 53%, 20% 53%,
+        10% 70%, 15% 53%,
+        0% 50%,
+        15% 47%, 10% 30%
+    );
+}
+
+.logo__snow:nth-of-type(2) { transform: rotate(60deg); }
+.logo__snow:nth-of-type(3) { transform: rotate(120deg); }
+
+.logo__star{
+    background-color: var(--light_blue);
+    position: absolute;
+    width: 0.1em;
+    height: 0.1em;
+    clip-path: polygon(
+    50% 0%,   56% 39%,  93% 25%,  63% 50%,  93% 75%,  56% 61%,
+    50% 100%, 44% 61%,  7% 75%,   37% 50%,  7% 25%,   44% 39%
+    );
+}
+
+.logo__star:nth-child(1) {top: 0.1em; left: 0.65em;}
+.logo__star:nth-child(2) {top: 0.43em; left: 0.3em;}
+.logo__star:nth-child(3) {top: 0.35em; left: 0.08em;}
+.logo__star:nth-child(4) {top: 0.6em; left: 0.1em;}
+
+.logo__base{
+    background-color: var(--light_blue);
+    position: absolute;
+    width: 0.5em;
+    height: 0.5em;
+    top: 0.25em;
+    left: 0.3em;
+    clip-path: polygon(
+        0% 90%, 10% 80%, 30% 72%,
+        43% 60%, 52% 39%, 55% 20%,
+        70% 25%, 85% 20%, 87% 40%,
+        91% 50%, 95% 70%, 96% 75%,
+        90% 80%, 80% 83%, 70% 86%,
+        60% 90%, 40% 100%, 5% 100%
+    );
+}
+
+.logo__bottom{
+    background-color: var(--dark_blue);
+    position: absolute;
+    width: 0.5em;
+    height: 0.5em;
+    top: 0.6em;
+    left: 0.3em;
+    clip-path: polygon(
+        5% 30%, 40% 30%, 60% 20%,
+        70% 16%, 80% 13%, 90% 10%,
+        96% 5%, 90% 18%, 88% 30%,
+        72% 30%, 70% 21%, 60% 25%,
+        40% 35%, 20% 35%, 10% 33%
+    );
+}
+
+.logo__blade{
+    background-color: var(--dark_blue);
+    position: absolute;
+    width: 0.55em;
+    height: 0.5em;
+    top: 0.78em;
+    left: 0.28em;
+    clip-path: polygon(
+        0% 5%, 5% 0%, 14% 4%, 24% 8%,
+        41% 9%, 100% 5%, 100% 10%,
+        16% 14%, 6% 10%
+    );
+}
+
+.logo__support{
+    background-color: var(--dark_blue);
+    position: absolute;
+    width: 0.03em;
+    height: 0.1em;
+}
+
+.logo__support:nth-child(1) {top: 0.71em; left: 0.335em; transform: rotate(40deg);}
+.logo__support:nth-child(2) {top: 0.73em; left: 0.45em;}
+.logo__support:nth-child(3) {top: 0.73em; left: 0.685em;}
+
+.logo__lace{
+    background-color: var(--dark_blue);
+    position: absolute;
+    width: 0.02em;
+    height: 0.07em;
+    border-radius: 30%;
+}
+.logo__lace:nth-child(1) {top: 0.41em; left: 0.58em; transform: rotate(90deg);}
+.logo__lace:nth-child(2) {top: 0.45em; left: 0.57em; transform: rotate(95deg);}
+.logo__lace:nth-child(3) {top: 0.48em; left: 0.55em; transform: rotate(100deg);}
+.logo__lace:nth-child(4) {top: 0.52em; left: 0.54em; transform: rotate(108deg);}
+.logo__lace:nth-child(5) {top: 0.55em; left: 0.5em; transform: rotate(110deg);}
+.logo__lace:nth-child(6) {top: 0.58em; left: 0.47em; transform: rotate(110deg);}
+
+.logo__skate{
+    transform: translateX(-0.1em) translateY(-0.05em) rotate(-10deg);
+}
+
+.logo__ice-line{
+    position: absolute;
+    width: 0.7em;
+    height: 0.2em;
+    top: 0.7em;
+    left: 0.18em;
+    border-radius: 50%;
+    background: radial-gradient(
+        closest-side,
+        var(--milk) 0%,
+        var(--milk) 95%,
+        var(--gold) 95%,
+        var(--gold) 100%
+    );
+}
