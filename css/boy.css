@@ -1,0 +1,200 @@
+.boy_css {
+    --pic_height: 200px;
+    --pic_width: 200px;
+    --pic_border: 3px;
+    --font_size: 194px;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: var(--font_size);              
+    border: var(--pic_border) solid #000000;
+    border-radius: 5px;
+    /* float: left; */
+    height: var(--pic_height);
+    width: var(--pic_width);
+    margin: 25px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(to top, #0c8320, #f5f4f3);
+}
+
+.text {
+    flex: 0 0 0.2em;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text1, .text2 {
+    font-size: 0.1em;
+    display: none;
+}
+
+.text2 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 0.6em;
+    transform: rotate(-35deg);
+}
+
+.boy {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.boy img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.boy2, .boy3 {
+    display: none;
+}
+
+.ball, .box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    offset-rotate: 0deg;
+}
+
+.ball {
+    width: 0.2em;
+    height: auto;
+    offset-path: path("M167,200 C97,200 55,185 25,97 C30,50 97,35 130,50 C145,70 155,120 167,167");
+}
+
+.box {
+    width: 1.2em;
+    height: 1.2em;
+    transform-origin: 60% 80%;
+    clip-path: circle(12% at 60% 80%);
+    offset-path: path("M240,85 C170,60 125,95 120,165");
+}
+
+
+
+.picture:hover .text1 {
+    display: block;
+}
+
+.picture:hover .boy1 {
+    display: none;
+}
+
+.picture:hover .boy2 {
+    display: block;
+}
+
+.picture:hover .ball {
+    pointer-events: auto;
+    animation: move_path 2.2s ease-in-out forwards;
+}
+
+.picture:hover .box {
+    pointer-events: auto;
+    animation: move_path 2.2s ease-out forwards;
+}
+
+.picture:hover .ball:hover {
+    animation: move_path 2.2s ease-in-out forwards,
+               spin 0.8s linear infinite;
+}
+
+.picture:hover .box:hover {
+    animation: move_path 2.2s ease-out forwards,
+               spin 0.8s linear infinite;
+}
+
+
+
+.picture:active {
+    animation: shake 0.12s ease-in-out infinite alternate;
+}
+
+.picture:active .text1 {
+    display: none;
+}
+
+.picture:active .text2 {
+    display: block;
+}
+
+.picture:active .boy2 {
+    display: none;
+}
+
+.picture:active .boy3 {
+    display: block;
+    animation: fall 0.4s ease-out forwards;
+}
+
+.picture:active .ball, .picture:active .ball:hover {
+    animation: ball_hide 0.4s ease-in-out forwards;
+}
+
+.picture:active .box, .picture:active .box:hover {
+    offset-path: path("M120,165 C115,135 120,130 135,145 C136,95 143,103 150,110 C160,70 170,70 220,50");
+    animation: box_fly 1.5s ease-in forwards;
+}
+
+
+
+@keyframes move_path {
+    0% { offset-distance: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 1; }
+}
+
+@keyframes box_fly {
+    0% { offset-distance: 0%; opacity: 1; }
+    100% { offset-distance: 100%; opacity: 1; }
+}
+
+@keyframes ball_hide {
+    from { offset-distance: 100%; opacity: 1; }
+    to { offset-distance: 100%; opacity: 0; }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fall {
+    from { transform: rotate(30deg); }
+    to { transform: rotate(-10deg); }
+}
+
+@keyframes shake {
+    from { transform: translateY(-0.01em); }
+    to { transform: translateY(0.01em); }
+}
